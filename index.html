@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Bin2Dec</title>
+</head>
+<body>
+
+    <main>
+
+        <form id="form-calc">
+            <article class="result-screen">
+                <p class="result">0</p><sub>(10)</sub>
+            </article>
+           
+            <label for="number" class="label-text">Insira o número binário <b>(apenas 8 dígitos)</b></label>
+            <div class="control-input">
+                <input type="number" name="getter_numbers" class="input-numbers" id="number" placeholder="Ex.:000000" min="0"  onkeypress="if(this.value.length==8)return false" required>
+                <button type="button" class="btn-calc"><img src="technical-support.svg" alt="" srcset=""></button>
+            </div>
+            <p class="error-mensage"></p>
+        </form>
+
+    </main>
+   
+    <script src="./app.js"></script>
+</body>
+</html>
