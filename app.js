@@ -14,7 +14,7 @@ btnCalc.addEventListener('click',()=>{
         if(if_is_binary){
             display_result.textContent = conversion
         }else{
-            error_mensage.textContent = 'O número introduzido não é binário'
+            error_mensage.textContent = 'O número introduzido não é binário, introduz um binário válido'
             display_result.textContent = 0
         }
     
