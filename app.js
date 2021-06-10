@@ -23,6 +23,19 @@ btnCalc.addEventListener('click',()=>{
     inputGetter.value = '';
 })
 
+inputGetter.addEventListener('keyup',()=>{
+    let size = inputGetter.value.length - 1,
+        newValue = inputGetter.value[size]
+        
+    if(Number(newValue) == 2){
+        
+        newValue = newValue[newValue.length-1]
+
+      alert(newValue)
+    }
+})
+
+
 
 
 
