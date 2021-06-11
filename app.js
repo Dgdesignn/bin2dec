@@ -5,7 +5,7 @@ const error_mensage = document.querySelector('.error-mensage');
 const form = document.querySelector('#form-calc');
 
 
-
+//button that makes the conversion happen
 btnCalc.addEventListener('click',()=>{
 
     let if_is_binary = isBinary(inputGetter.value),
@@ -24,26 +24,15 @@ btnCalc.addEventListener('click',()=>{
     inputGetter.value = '';
 })
 
-inputGetter.addEventListener('keyup',()=>{
-    let size = inputGetter.value.length - 1,
-        newValue = inputGetter.value[size]
-        
-    if(Number(newValue) == 2){
-        
-        newValue = newValue[newValue.length-1]
-
-      alert(newValue)
-    }
-})
 
 
-
+//check if the number entered is binary
 inputGetter.addEventListener('keyup',()=>{
     let size = inputGetter.value.length - 1,
         newValue = inputGetter.value[size],
         decimal = [2,3,4,5,6,7,8,9];
 
-    if(decimal.indexOf(Number(newValue)) !== -1){
+    if(!(isBinary(inputGetter.value))){
         
       newValue = inputGetter.value
       newValue = newValue.replace(newValue[size],'') 
@@ -54,10 +43,7 @@ inputGetter.addEventListener('keyup',()=>{
 
 
 
-
-
-
-//function conversor
+//converter function
 function binToDec(value){
 
     if(isBinary(value)){
