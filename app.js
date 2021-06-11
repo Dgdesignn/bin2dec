@@ -11,11 +11,12 @@ btnCalc.addEventListener('click',()=>{
     let if_is_binary = isBinary(inputGetter.value),
         conversion = binToDec(inputGetter.value);
 
-        if(if_is_binary){
-            display_result.textContent = conversion
-        }else{
-            error_mensage.textContent = 'O número introduzido não é binário, introduz um binário válido'
+        if(!if_is_binary || inputGetter.value === ''){
+            error_mensage.textContent = 'Não introduza número inválido ou tentar enviar campo vazio!'
             display_result.textContent = 0
+        }else{
+
+            display_result.textContent = conversion
         }
     
     
@@ -23,15 +24,18 @@ btnCalc.addEventListener('click',()=>{
     inputGetter.value = '';
 })
 
+
 inputGetter.addEventListener('keyup',()=>{
     let size = inputGetter.value.length - 1,
-        newValue = inputGetter.value[size]
-        
-    if(Number(newValue) == 2){
-        
-        newValue = newValue[newValue.length-1]
+        newValue = inputGetter.value[size],
+        decimal = [2,3,4,5,6,7,8,9];
 
-      alert(newValue)
+    if(decimal.indexOf(Number(newValue)) !== -1){
+        
+      newValue = inputGetter.value
+      newValue = newValue.replace(newValue[size],'') 
+        
+      inputGetter.value = newValue
     }
 })
 
